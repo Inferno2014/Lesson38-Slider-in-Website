@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Slider</title>
+    <style>
+        .slider {
+            height: 95vh;
+            width: 100vw;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <img class="slider" src="hf.jpg">
+        <img class="slider" src="pulses.jpg">
+        <img class="slider" src="salad.jpg">
+        <img class="slider" src="jf.jpg">
+        <img class="slider" src="pizza.avif">
+        <img class="slider" src="burger.jpg">
+    </section>
+    <script>
+        let myIndex = 0;
+        carousel();
+        function carousel() {
+            var i;
+            let x = document.getElementsByClassName("slider");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {
+                myIndex = 1;
+            }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 3000);
+        }
+    </script>
+</body>
+
+</html>
